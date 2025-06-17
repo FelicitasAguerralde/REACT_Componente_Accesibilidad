@@ -1,6 +1,6 @@
 /* Variables de color */
 :root {
-  --color-primary: #005fcc;
+  --color-primary: #2280ec;
   --color-primary-focus: #ffbf47;
   --color-bg: #fff;
   --color-bg-hover: #e6f0fa;
@@ -15,17 +15,50 @@
   --color-high-contrast-bg: #000;
   --color-high-contrast-text: #fff;
   --color-high-contrast-link: #ffff00;
+  --color-whatsapp: #25D366;
 }
 
-/* Posiciona el botón flotante */
-.accessibility-sticky {
+/* Posiciona los botones flotantes */
+.floating-buttons {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* Botón principal */
+/* Botón de WhatsApp */
+.whatsapp-button {
+  background: var(--color-whatsapp);
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--color-shadow);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  background: #1faf54;
+}
+
+.whatsapp-button:focus {
+  outline: 3px solid var(--color-primary-focus);
+}
+
+.whatsapp-button svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+/* Botón principal de accesibilidad */
 .accessibility-trigger {
   background: var(--color-primary);
   border: none;
@@ -35,6 +68,12 @@
   box-shadow: 0 2px 8px var(--color-shadow);
   transition: background 0.2s;
 }
+
+.accessibility-trigger:hover {
+  transform: scale(1.1);
+  background: #1f72d0;
+}
+
 .accessibility-trigger:focus {
   outline: 3px solid var(--color-primary-focus);
 }
@@ -63,11 +102,13 @@
   cursor: pointer;
   transition: background 0.2s, border 0.2s;
 }
+
 .accessibility-menu button:focus {
   outline: 3px solid var(--color-primary);
   background: var(--color-bg-hover);
   border-color: var(--color-primary);
 }
+
 .accessibility-menu button:hover {
   background: var(--color-bg-hover);
 }
