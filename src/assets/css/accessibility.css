@@ -1,0 +1,90 @@
+/* Variables de color */
+:root {
+  --color-primary: #005fcc;
+  --color-primary-focus: #ffbf47;
+  --color-bg: #fff;
+  --color-bg-hover: #e6f0fa;
+  --color-bg-menu: #fff;
+  --color-border: #ccc;
+  --color-text: #222;
+  --color-shadow: rgba(0,0,0,0.2);
+  --color-shadow-menu: rgba(0,0,0,0.18);
+  --color-dark-bg: #181818;
+  --color-dark-text: #f4f4f4;
+  --color-link-dark: #ffbf47;
+}
+
+/* Posiciona el botón flotante */
+.accessibility-sticky {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+}
+
+/* Botón principal */
+.accessibility-trigger {
+  background: var(--color-primary);
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--color-shadow);
+  transition: background 0.2s;
+}
+.accessibility-trigger:focus {
+  outline: 3px solid var(--color-primary-focus);
+}
+
+/* Menú accesibilidad */
+.accessibility-menu {
+  margin-top: 12px;
+  background: var(--color-bg-menu);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px var(--color-shadow-menu);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 160px;
+}
+
+/* Botones del menú */
+.accessibility-menu button {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 4px;
+  padding: 8px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+}
+.accessibility-menu button:focus {
+  outline: 3px solid var(--color-primary);
+  background: var(--color-bg-hover);
+  border-color: var(--color-primary);
+}
+.accessibility-menu button:hover {
+  background: var(--color-bg-hover);
+}
+
+/* Alto contraste */
+.high-contrast {
+  filter: invert(1) contrast(1.2);
+}
+
+/* Modo oscuro */
+.dark-mode {
+  background: var(--color-dark-bg) !important;
+  color: var(--color-dark-text) !important;
+}
+.dark-mode a {
+  color: var(--color-link-dark) !important;
+}
+
+/* Mejora la visibilidad del foco para todos los elementos interactivos */
+:focus-visible {
+  outline: 3px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
