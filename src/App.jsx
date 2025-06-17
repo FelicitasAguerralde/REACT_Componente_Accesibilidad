@@ -1,10 +1,11 @@
 import './App.css';
-import Index from './pages/Index';
 import AccessibilityTool from './components/AccessibilityTool';
+import Index from './pages/Index';
+
 function App() {
   return (
     <>
-      <main>
+      <main id="main-content">
         <Index />
       </main>
       <AccessibilityTool />

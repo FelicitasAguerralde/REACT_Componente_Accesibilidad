@@ -12,6 +12,9 @@
   --color-dark-bg: #181818;
   --color-dark-text: #f4f4f4;
   --color-link-dark: #ffbf47;
+  --color-high-contrast-bg: #000;
+  --color-high-contrast-text: #fff;
+  --color-high-contrast-link: #ffff00;
 }
 
 /* Posiciona el botón flotante */
@@ -70,17 +73,68 @@
 }
 
 /* Alto contraste */
-.high-contrast {
-  filter: invert(1) contrast(1.2);
+#main-content.high-contrast {
+  background: var(--color-high-contrast-bg) !important;
+  color: var(--color-high-contrast-text) !important;
+  filter: contrast(1.4);
+}
+
+#main-content.high-contrast a {
+  color: var(--color-high-contrast-link) !important;
+  text-decoration: underline;
+}
+
+#main-content.high-contrast button,
+#main-content.high-contrast input,
+#main-content.high-contrast select {
+  border: 2px solid var(--color-high-contrast-text) !important;
+  background: var(--color-high-contrast-bg) !important;
+  color: var(--color-high-contrast-text) !important;
 }
 
 /* Modo oscuro */
-.dark-mode {
+#main-content.dark-mode {
   background: var(--color-dark-bg) !important;
   color: var(--color-dark-text) !important;
 }
-.dark-mode a {
+
+#main-content.dark-mode a {
   color: var(--color-link-dark) !important;
+}
+
+#main-content.dark-mode button,
+#main-content.dark-mode input,
+#main-content.dark-mode select {
+  background: #2a2a2a !important;
+  color: var(--color-dark-text) !important;
+  border-color: #444 !important;
+}
+
+/* Subrayar enlaces */
+#main-content.underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+}
+
+/* Fuente para dislexia */
+#main-content.dyslexia-font {
+  font-family: 'OpenDyslexic', sans-serif !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.35px !important;
+  word-spacing: 0.16em !important;
+}
+
+#main-content.dyslexia-font p,
+#main-content.dyslexia-font h1,
+#main-content.dyslexia-font h2,
+#main-content.dyslexia-font h3,
+#main-content.dyslexia-font h4,
+#main-content.dyslexia-font h5,
+#main-content.dyslexia-font h6,
+#main-content.dyslexia-font span,
+#main-content.dyslexia-font div {
+  font-family: 'OpenDyslexic', sans-serif !important;
 }
 
 /* Mejora la visibilidad del foco para todos los elementos interactivos */

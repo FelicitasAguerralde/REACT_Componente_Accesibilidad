@@ -11,37 +11,52 @@ export default function AccessibilityTool() {
 
     // Cambia el tamaño de fuente
     const changeFontSize = (size) => {
-        document.documentElement.style.fontSize = `${size}px`;
-        setFontSize(size);
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.style.fontSize = `${size}px`;
+            setFontSize(size);
+        }
     };
 
     // Contraste alto
     const toggleContrast = () => {
-        document.body.classList.toggle('high-contrast');
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.classList.toggle('high-contrast');
+        }
     };
 
     // Modo oscuro
     const toggleDarkMode = () => {
-        document.body.classList.toggle('dark-mode');
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.classList.toggle('dark-mode');
+        }
     };
 
     // Subrayado de enlaces
     const toggleUnderlineLinks = () => {
-        document.body.classList.toggle('underline-links');
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.classList.toggle('underline-links');
+        }
     };
 
     // Fuente dislexia
     const toggleDyslexiaFont = () => {
-        document.body.classList.toggle('dyslexia-font');
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.classList.toggle('dyslexia-font');
+        }
     };
 
     // Leer texto principal
     const readText = () => {
-        const main = document.querySelector('main');
-        if (main && main.innerText.trim()) {
-            window.speechSynthesis.cancel(); // Detiene cualquier lectura previa
+        const mainContent = document.getElementById('main-content');
+        if (mainContent && mainContent.innerText.trim()) {
+            window.speechSynthesis.cancel();
             const speech = new window.SpeechSynthesisUtterance();
-            speech.text = main.innerText;
+            speech.text = mainContent.innerText;
             speech.lang = i18n.language === "en" ? "en-US" : "es-ES";
             setReading(true);
             speech.onend = () => setReading(false);
@@ -70,10 +85,13 @@ export default function AccessibilityTool() {
 
     // Restablecer todo
     const resetAccessibility = () => {
-        document.documentElement.style.fontSize = '16px';
-        setFontSize(16);
-        document.body.classList.remove('high-contrast', 'dark-mode', 'underline-links', 'dyslexia-font');
-        stopReading();
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.style.fontSize = '16px';
+            setFontSize(16);
+            mainContent.classList.remove('high-contrast', 'dark-mode', 'underline-links', 'dyslexia-font');
+            stopReading();
+        }
     };
 
     return (
