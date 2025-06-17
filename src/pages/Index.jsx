@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Index() {
   // This is a placeholder for any translation logic you might want to implement
@@ -6,7 +7,7 @@ export default function Index() {
     <div>
       <h1>Welcome to the Index Page</h1>
       <p>This is the main entry point of our application.</p>
-      <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+      <Link to="/contacto">Contacto</Link>
     </div>
   );
 }

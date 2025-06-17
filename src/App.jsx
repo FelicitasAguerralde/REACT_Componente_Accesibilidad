@@ -1,14 +1,14 @@
-import './App.css';
-import AccessibilityTool from './components/AccessibilityTool';
-import Index from './pages/Index';
+import { Outlet } from 'react-router-dom'
+import './App.css'
+import AccessibilityTool from './components/AccessibilityTool'
 
 function App() {
   return (
     <>
-      <main id="main-content">
-        <Index />
-      </main>
       <AccessibilityTool />
+      <main id="main-content">
+        <Outlet />
+      </main>
     </>
   )
 }
